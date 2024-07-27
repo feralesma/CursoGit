@@ -256,6 +256,7 @@ Video 4 [pildoras](https://www.youtube.com/watch?v=axXlYdyDD3I&list=PLU8oAlHdN5B
   - ...
 
 ### Ramas o Branches.
+
 Video 5 [pildoras](https://www.youtube.com/watch?v=q9LJIHDgJtE&list=PLU8oAlHdN5BlyaPFiNQcV0xDqy0eR35aU&index=5)
 
 - Ramas o branch
@@ -267,10 +268,10 @@ Video 5 [pildoras](https://www.youtube.com/watch?v=q9LJIHDgJtE&list=PLU8oAlHdN5B
   - `git branch` vemos las ramas que hay y en que rama estamos trabajando
   - `git checkout javascript`para moverse a la rama "javascript"
   - Si ahora realizamos cambios en los archivos estos tendrán lugar en la rama "javascript":
-    * `git add .`
-    * `git commit -m "saludo javascript agregado`
-    * `git log --oneline`
+    - `git add .`
+    - `git commit -m "saludo javascript agregado`
+    - `git log --oneline`
   - Si ahora nos volvemos a la rama "master" en esta rama no tendremos los cambios realizados en la otra rama.
-    * `git checkout master`
+    - `git checkout master`
   - De vuelta a la rama javascript deberíamos volver a tener los últimos cambios realizados.
-  - 
+  -
