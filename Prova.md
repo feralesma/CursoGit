@@ -189,18 +189,54 @@ Vídeo 2 [pildorasinformaticas](https://www.youtube.com/watch?v=qk-GWtcdQek&list
   - Habrá que tener en cuenta que si restauramos a una versión inicial saltándonos las copias realizadas posteriormente a ella, perderemos los cambios de las últimas copias no pudiendo volver a ellas.
 
 ### Subiendo a GitHub.
+
 Vídeo 3 [pildoras](https://www.youtube.com/watch?v=0UlqvTJzOL4&list=PLU8oAlHdN5BlyaPFiNQcV0xDqy0eR35aU&index=3)
 
 - Algunos comanados más.
 
   - `git add .`
-    * Para hacer seguimiento de todos los archivos.
+    - Para hacer seguimiento de todos los archivos.
   - `git commit -am "párrafo y tamaño de fuentes"`
-    * Hacemos un add + commit para cuando tengamos que hacer las dos operaciones contiguas.
-  - 
-
-
-
-
+    - Hacemos un add + commit para cuando tengamos que hacer las dos operaciones contiguas.
+  - `git commit --amend`
+    - Podemos abrir el editor establecido en Git en su instalación (por defecto vim) para realizar modificaciones como por ejemplo el mensaje agregado a un commit.
+  - ...
 
 - Subir respositorio a GitHub
+  - Primero hay que registrarse en GitHub y una vez registrados crearemos un repositorio.
+  - Una vez creado nos ofrece un "Quick setup" con varias opciones y los comandos que deberíamos utilizar para cada una de las opciones.
+    - Get started by creating a new file or uploading an existing file. We recommend every repository include a README, LICENSE, and .gitignore.
+    - …or create a new repository on the command line:
+      ```
+      echo "# CursoGit" >> README.md
+      git init
+      git add README.md
+      git commit -m "first commit"
+      git branch -M main
+      git remote add origin https://github.com/feralesma/CursoGit.git
+      git push -u origin main
+      ```
+    - …or push an existing repository from the command line:
+      ```
+      git remote add origin https://github.com/feralesma/CursoGit.git
+      git branch -M main
+      git push -u origin main
+      ```
+  - Nosotros usaremos el segundo bloque puesto que partimos de un repositorio existente en local.
+  - ...
+
+### Clonación y tags.
+Video 4 [pildoras](https://www.youtube.com/watch?v=axXlYdyDD3I&list=PLU8oAlHdN5BlyaPFiNQcV0xDqy0eR35aU&index=4)
+
+- Editar desde GitHub
+
+
+
+
+
+- Crear tags
+
+
+
+
+- Clonación de repositorio en local
