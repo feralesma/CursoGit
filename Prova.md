@@ -274,4 +274,8 @@ Video 5 [pildoras](https://www.youtube.com/watch?v=q9LJIHDgJtE&list=PLU8oAlHdN5B
   - Si ahora nos volvemos a la rama "master" en esta rama no tendremos los cambios realizados en la otra rama.
     - `git checkout master`
   - De vuelta a la rama javascript deberíamos volver a tener los últimos cambios realizados.
+  - Finalmente en cada rama se tendrán las modificaciones realizadas en cada una de ellas pero no en la otra.
+  - Para poder fusionar los cambios de ambas ramas se utiliza el comando "merge" de la siguiente forma:
+    * Primero nos movemos a la rama master: `git checkout master`
+    * 
   -
