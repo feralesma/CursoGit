@@ -266,4 +266,11 @@ Video 5 [pildoras](https://www.youtube.com/watch?v=q9LJIHDgJtE&list=PLU8oAlHdN5B
   - `git branch javascript` crea la rama "javascript"
   - `git branch` vemos las ramas que hay y en que rama estamos trabajando
   - `git checkout javascript`para moverse a la rama "javascript"
+  - Si ahora realizamos cambios en los archivos estos tendrán lugar en la rama "javascript":
+    * `git add .`
+    * `git commit -m "saludo javascript agregado`
+    * `git log --oneline`
+  - Si ahora nos volvemos a la rama "master" en esta rama no tendremos los cambios realizados en la otra rama.
+    * `git checkout master`
+  - De vuelta a la rama javascript deberíamos volver a tener los últimos cambios realizados.
   - 
