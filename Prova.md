@@ -200,7 +200,14 @@ Vídeo 3 [pildoras](https://www.youtube.com/watch?v=0UlqvTJzOL4&list=PLU8oAlHdN5
     - Hacemos un add + commit para cuando tengamos que hacer las dos operaciones contiguas.
   - `git commit --amend`
     - Podemos abrir el editor establecido en Git en su instalación (por defecto vim) para realizar modificaciones como por ejemplo el mensaje agregado a un commit.
-  - ...
+  - La propia consola nos ofrece algunos consejos sobre lo que podemos hacer ...
+    > ...  
+    > Changes to be committed:  
+    > (use "git restore --staged <file>..." to unstage)  
+    > Changes not staged for commit:  
+    > (use "git add <file>..." to update what will be committed)  
+    > (use "git restore <file>..." to discard changes in working directory)  
+    > ...
 
 - Subir respositorio a GitHub
   - Primero hay que registrarse en GitHub y una vez registrados crearemos un repositorio.
@@ -226,17 +233,50 @@ Vídeo 3 [pildoras](https://www.youtube.com/watch?v=0UlqvTJzOL4&list=PLU8oAlHdN5
   - ...
 
 ### Clonación y tags.
+
 Video 4 [pildoras](https://www.youtube.com/watch?v=axXlYdyDD3I&list=PLU8oAlHdN5BlyaPFiNQcV0xDqy0eR35aU&index=4)
 
 - Editar desde GitHub
 
-
-
-
+  - Si realizamos cambios en los ficheros desde GitHub podremos sincronizarlos con el respositorio local con el comando:
+    - `git pull ` desde la consola del respositorio local
+  - ...
 
 - Crear tags
-
-
-
-
+  - Supongamos que "nuestro proyecto" está acabado y funciona y que por tanto tenemos nuestra "versión 1.0" preparada para poder descargar. Esto lo podemos hacer gracias a las "Tags".
+  - ` git tag 15-09-20v1 -m "Versión 1 del proyecto"` creamos la versión 1 del proyecto.
+  - `git log --oneline` para ver lo realizado por el comando anterior.
+  - `git pusth --tags` con esto subiremos las tags al repositorio remoto.
+  - Ahora desde **GitHub** podemos ver que ya hay tags creadas y al hacer clic sobre la opción **Tag** nos dará la opción de descargar el proyecto en versión zip o tar.gz.
+  - Una utilidad es que si una versión no funciona bien podremos volver a la versión anterior también desde las tags.
 - Clonación de repositorio en local
+  - Si por algún motivo, como un error o borrado accidental, perdemos la carpeta del proyecto en nuetro ordenador podemos recuperar toda la carpeta desde GitHub:
+    - En el repositorio de GitHub vamos al botón **"Code"** y al desplegarse vemos que nos ofrece una url para clonar el repositorio a través de https (también por ssh ??), o descargando un zip del proyecto, en definitiva tenemos varias opciones. Desde la consola podremos utilizar (pegar) la url para utilizar el comando y clonar el repositorio en local desde GitHub:
+      - `git clone https://github.com/feralesma/CursoGit.git`
+  - ...
+
+### Ramas o Branches.
+
+Video 5 [pildoras](https://www.youtube.com/watch?v=q9LJIHDgJtE&list=PLU8oAlHdN5BlyaPFiNQcV0xDqy0eR35aU&index=5)
+
+- Ramas o branch
+
+  - Son ramas o líneas de tiempo de nuestro proyecto compuestas por todos loc "commits" que se han ido creando. Las ramas tienen un nombre que por defecto es la rama "Master".
+  - En los proyectos en los que participan varias personas y que son complejos, a partir de cierto "commit" podríamos volver a otro commit anterior porque no nos convence la situación actual del proyecto (y esto puede pasar varias veces) o tal vez porque se decide probar como quedaría el proyecto al hacer ciertas pruebas. Otro caso que podría darse es que cada persona se encargue de una parte del proyecto (una para html, otra para css y otra para js). Las ramas o branches sirven para ayudarnos en todos estos casos.
+  - Inicialmente se trabaja en la rama "Master" pero adicionamente se pueden crear otras ramas paralelas. Esto es como si tuvieras el original y una copia en las que se puede trabajar simultáneamente, trabajando cada copia de forma independiente (pudiéndose fusionar en cierto momento del proyecto) para lo cual hay que tener en cuenta los posibles conflictos de concurrencia (modificación del mismo archivo o código) que puedan existir.
+  - `git branch javascript` crea la rama "javascript"
+  - `git branch` vemos las ramas que hay y en que rama estamos trabajando
+  - `git checkout javascript`para moverse a la rama "javascript"
+  - Si ahora realizamos cambios en los archivos estos tendrán lugar en la rama "javascript":
+    - `git add .`
+    - `git commit -m "saludo javascript agregado`
+    - `git log --oneline`
+  - Si ahora nos volvemos a la rama "master" en esta rama no tendremos los cambios realizados en la otra rama.
+    - `git checkout master`
+  - De vuelta a la rama javascript deberíamos volver a tener los últimos cambios realizados.
+  - Finalmente en cada rama se tendrán las modificaciones realizadas en cada una de ellas pero no en la otra.
+  - Para poder fusionar los cambios de ambas ramas se utiliza el comando "merge" de la siguiente forma:
+    - Primero nos movemos a la rama master: `git checkout master` (hemos de estar en master)
+    - `git merge javascript`
+    - Si aparecen conflictos dará error y nos indicará los archivos en los que hay conflictos y que los debemos arreglar y hacer un commit con el resultado.
+  - ...
